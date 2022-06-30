@@ -72,3 +72,27 @@ resource "aws_s3_bucket_acl" "log_static" {
   bucket = aws_s3_bucket.static.id
   acl    = "private"
 }
+
+// ------------- //
+
+resource "aws_dynamodb_table" "ddb" {
+  name           = "test-ddb-tlorreyte"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 2000
+  write_capacity = 20
+  hash_key       = "UserId"
+  range_key      = "GameTitle"
+  point_in_time_recovery {
+    enabled = true
+  }
+
+  attribute {
+    name = "UserId"
+    type = "S"
+  }
+
+  attribute {
+    name = "GameTitle"
+    type = "S"
+  }
+}
