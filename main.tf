@@ -78,7 +78,7 @@ resource "aws_s3_bucket_acl" "log_static" {
 resource "aws_dynamodb_table" "ddb" {
   name           = "test-ddb-tlorreyte"
   billing_mode   = "PROVISIONED"
-  read_capacity  = 2000
+  read_capacity  = 20
   write_capacity = 20
   hash_key       = "UserId"
   range_key      = "GameTitle"

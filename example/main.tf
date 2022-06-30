@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 module "test" {
-    source = ".."
+    source = "./.."
 
     bucket_name = "test-tlorreyte-cloud-ouest"
 }
