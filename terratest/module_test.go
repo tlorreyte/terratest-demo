@@ -12,10 +12,10 @@ import (
 
 func TestExample(t *testing.T) {
 
-	// Indique où se trouve les fichiers Terragrunt à executer.
+	// Indique où se trouve les fichiers à executer.
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir:    "../example/terratest",
-		TerraformBinary: "terragrunt",
+		TerraformDir:    "../example",
+		TerraformBinary: "terraform",
 	})
 
 	// Detruis les ressources peu importe le code retour de la fonction (defer)

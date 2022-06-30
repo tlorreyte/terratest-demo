@@ -16,3 +16,7 @@ module "test" {
 
     bucket_name = "test-tlorreyte-cloud-ouest"
 }
+
+output "bucket_endpoint" {
+  value = module.test.bucket_endpoint
+}
